@@ -1,0 +1,5 @@
+geopy==2.4.1 
+pendulum==3.2.0
+requests==2.32.5
+apache-airflow==3.1.7
+psycopg2-binary==2.9.11
