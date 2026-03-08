@@ -30,7 +30,7 @@ def request_coordinates():
 #    print(data)
 
 with DAG(
-    dag_id="request_dag",
+    dag_id="geolocation_dag",
     start_date=pendulum.datetime(2016, 1, 1),
     schedule="@daily",
     default_args={"retries": 2},
