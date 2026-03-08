@@ -35,5 +35,4 @@ with DAG(
     schedule="@daily",
     default_args={"retries": 2},
 ):
-   op = PythonOperator(task_id="get_google", python_callable=request_coordinates) 
-   op = PythonOperator(task_id="get_water_rlp", python_callable=request_coordinates)
+   op = PythonOperator(task_id="request_coordinates", python_callable=request_coordinates)
