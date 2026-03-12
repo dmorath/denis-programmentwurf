@@ -76,15 +76,21 @@ def request_coordinates():
 #    url = "https://search.rlp-umwelt.de/haus?query=Grünstadt Oberer Bergelweg 7"
 #    #https://geodaten-wasser.rlp-umwelt.de/api/data/twist_stammdaten?w=messst_nr=2391695021
 #    #https://wasserportal.rlp-umwelt.de/auskunftssysteme/trinkwasserinformationssystem
+# ==> https://geodaten-wasser.rlp-umwelt.de/api/data/twist_stammdaten_messparametervalues?w=wvg_nr=2153 with wvg_nr
 #    response = requests.get(url)
 #    data = response.json()
 #    print(data)
 
+# weather: https://openweathermap.org/api
+# air quality
 with DAG(
     dag_id="geolocation_dag",
     start_date=pendulum.datetime(2016, 1, 1),
     schedule="@daily",
     default_args={"retries": 2},
 ):
-   op = PythonOperator(task_id="write_initial_interesting_places", python_callable=write_initial_interesting_places)
-   op = PythonOperator(task_id="request_coordinates", python_callable=request_coordinates)
+   op1 = PythonOperator(task_id="write_initial_interesting_places", python_callable=write_initial_interesting_places)
+   op2 = PythonOperator(task_id="request_coordinates", python_callable=request_coordinates)
+
+   op1 >> op2
+   

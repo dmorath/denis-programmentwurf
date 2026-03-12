@@ -1,7 +1,7 @@
 # Location Info
 
 ## Project Description
-Ich möchte möglichst viele Informationen zu einem Ort in Deutschland (Rheinland Pfalz und Baden-Württember) sammeln und darstellen.
+Ich möchte möglichst viele Informationen zu einem Ort in Deutschland (Rheinland Pfalz) sammeln und darstellen.
 Ziel ist eine Einschätzung ob man dort wohnen möchte. 
 
 ## Teammitglieder
